@@ -1,0 +1,49 @@
+{% include "registrar/index.html" %}
+
+<style>
+  .main {
+    margin-left: 220px;
+    font-size: 28px; 
+    padding: 0px 10px;
+  }
+  table, th, td {
+    border:1px solid black;
+  }
+</style>
+
+<div class="main">
+  <h1>RESOLVED COURT CASES: </h1>
+
+  <table style="width:100%">
+    <tr>
+      <th>CIN</th>
+      <th>Start Date</th>
+      <th>Defendant</th>
+      <th>Address</th>
+      <th>Crime Type</th>
+      <th>Lawyer</th>
+      <th>Public Prosecuter</th>
+      <th>attending Judge</th>
+      <th>JudgeMent date</th>
+      <th>Judegment summary</th>
+    </tr>
+    {% for case in object_list %}
+    {% if case.status == False %}
+    {% if start <= case.judgement_date and case.judgement_date <= end %}
+    <tr>
+      <th> {{case.pk}} </th>
+      <th> {{case.starting_date}} </th>
+      <th> {{case.defendant}} </th>
+      <th> {{case.defendant_address}} </th>
+      <th> {{case.crimetype}} </th>
+      <th> {{case.lawyer}} </th>
+      <th> {{case.public_prosecuter}} </th>
+      <th> {{case.attending_judge}} </th>
+      <th> {{case.judgement_date}} </th>
+      <th> {{case.judgement_summary}} </th>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </table>
+</div>

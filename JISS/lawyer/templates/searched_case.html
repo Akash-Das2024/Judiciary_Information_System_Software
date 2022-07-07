@@ -1,0 +1,93 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+    
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: rgb(34, 7, 7);
+      overflow-x: hidden;
+      padding: 8px 0;
+    }
+    
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e6eef5;
+      display: block;
+    }
+    
+    .sidenav a:hover {
+      color: #df7a37;
+    }
+    
+    .main {
+      margin-left: 220px;
+      font-size: 28px; 
+      padding: 0px 10px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+    </style>
+   
+  </head>
+    
+  <body>
+  <div class="sidenav">
+    <a href="/lawyer">Home</a>
+    <a href="/lawyer/pastcase/">Search</a>
+  </div>
+  </body>
+  
+  <style>
+    table, th, td {
+    border:1px solid black;
+  }
+  </style>
+  
+  <div class="main">
+    <h1>CASE DETAILS: </h1>
+  
+    <table style="width:100%">
+      <tr>
+        <th>CIN</th>
+        <th>Start Date</th>
+        <th>Defendant</th>
+        <th>Address</th>
+        <th>Crime Type</th>
+        <th>Lawyer</th>
+        <th>Public Prosecuter</th>
+        <th>attending Judge</th>
+        <th>JudgeMent date</th>
+        <th>Judegment summary</th>
+      </tr>
+      {% for case in object_list %}
+      {% if case.status == False %}
+      <tr>
+        <th> {{case.pk}} </th>
+        <th> {{case.starting_date}} </th>
+        <th> {{case.defendant}} </th>
+        <th> {{case.defendant_address}} </th>
+        <th> {{case.crimetype}} </th>
+        <th> {{case.lawyer}} </th>
+        <th> {{case.public_prosecuter}} </th>
+        <th> {{case.attending_judge}} </th>
+        <th> {{case.judgement_date}} </th>
+        <th> {{case.judgement_summary}} </th>
+      </tr>
+      {% endif %}
+      {% endfor %}
+    </table>
+  </div>
+  

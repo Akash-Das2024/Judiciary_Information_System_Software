@@ -1,0 +1,55 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 200px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background: rgb(34, 7, 7);
+      overflow-x: hidden;
+      padding: 8px 0;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #e6eef5;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #df7a37;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {
+        padding-top: 15px;
+      }
+      .sidenav a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidenav">
+    <a href="/registrar/">home</a>
+    <a href="/registrar/newcase/">newcase</a>
+    <a href="/registrar/pending/">pending cases</a>
+    <a href="/registrar/resolved/">Resolved Cases</a>
+    <a href="/registrar/hearing/">Allot hearing date</a>
+    <a href="/registrar/particular_case/">particular case</a>
+    <a href="/registrar/hearing_update/">Update hearing deatils</a>
+    <a href="/registrar/case_closed/">Update JudgeMent Summary</a>
+    <a href="/">log out</a>
+  </div>
+</body>
