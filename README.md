@@ -10,6 +10,12 @@
 -   Judges
 -   Lawyers
 
+### Install Django:
+
+```
+pip install django
+```
+
 ### Usage:
 
 -   run
