@@ -16,6 +16,16 @@
 pip install django
 ```
 
+### Creating an environment:
+
+```
+conda create --name my-env python=3.9
+conda activate my-env
+pip install django
+```
+
+-   make sure you have installed conda :)
+
 ### Usage:
 
 -   run
